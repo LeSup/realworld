@@ -51,7 +51,7 @@ export default {
         email: '',
         password: ''
       },
-      errors: {}
+      errors: {},
     }
   },
   computed: {
@@ -77,7 +77,14 @@ export default {
         this.$router.push('/');
       } catch (e) {
         // 错误处理
-        this.errors = e.response.data.errors;
+        const { errors } = e.response.data;
+        Object.keys(errors).forEach(key => {
+          const value = errors[key];
+          if (typeof value === 'string') {
+            errors[key] = [value];
+          }
+        });
+        this.errors = errors;
       }
     }
   }

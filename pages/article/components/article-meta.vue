@@ -10,8 +10,8 @@
       <span class="date">{{ article.createdAt | date('MMM DD, YYYY') }}</span>
     </div>
     <button class="btn btn-sm btn-outline-secondary" >
-      <i class="ion-plus-round"></i>
-      &nbsp;
+      <!-- <i class="ion-plus-round"></i>
+      &nbsp; -->
       Follow {{ article.author.username }} <span class="counter">(10)</span>
     </button>
     &nbsp;&nbsp;

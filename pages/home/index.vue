@@ -145,13 +145,17 @@ export default {
       }),
       getTags(),
     ]);
+
+    const { tags } = tagsData;
+    if (tags.length > 20) tags.splice(20);
+    
     const { articles, articlesCount } = articlesData;
     articles.forEach(article => article.favoriteDisabled = false);
 
     return {
       articles,
       articlesCount,
-      ...tagsData,
+      tags,
       page,
       limit,
       tag,

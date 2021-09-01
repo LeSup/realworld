@@ -18,11 +18,20 @@ export const getFeedArticles = params => {
   });
 }
 
-// 关注用户的文章列表
+// 查看文章
 export const getArticle = slug => {
   return request({
     method: 'GET',
     url: `/api/articles/${slug}`
+  });
+}
+
+// 创建文章
+export const createArticle = data => {
+  return request({
+    method: 'POST',
+    url: `/api/articles`,
+    data
   });
 }
 
