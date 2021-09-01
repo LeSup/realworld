@@ -21,7 +21,7 @@
                     class="form-control"
                     placeholder="Enter tags"
                     v-model="tag"
-                    @keydown.enter="handleEnter"
+                    @keydown.prevent.enter="handleEnter"
                   >
                   <div class="tag-list" v-for="tag in article.tagList" :key="tag">{{ tag }}</div>
               </fieldset>
